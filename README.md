@@ -39,7 +39,6 @@ This project demonstrates how to create an API for your Language Learning Models
 1. Create a `.env` file in the project root:
     ```env
     API_KEY_SECRET=your_secret_key
-    DEFAULT_CREDITS=100
     ```
 
 2. Replace `your_secret_key` with a secure random string.
@@ -48,7 +47,7 @@ This project demonstrates how to create an API for your Language Learning Models
 
 Start the API server:
 ```bash
-python app.py
+python main.py
 ```
 
 The API will be available at `http://localhost:5000`.
@@ -64,26 +63,16 @@ The API will be available at `http://localhost:5000`.
      Authorization: Bearer <API_KEY>
   ```
 
-- The server validates the API key and checks the user's remaining credits.
-
-### Credit-Based Usage
-
-- Each API call deducts credits based on usage.
-- Users can check their remaining credits via:
-  ```http
-  GET /credits
-  Headers:
-     Authorization: Bearer <API_KEY>
-  ```
+- The server validates the API key.
 
 ## Example Endpoints
 
 - `/generate`: Generate text using the LLM.
-- `/credits`: Check remaining credits.
 
 ## Extending the Project
 
 - Add more endpoints for advanced LLM features.
+- configure the credits
 - Integrate with a database for persistent user data.
 - Implement rate limiting for additional security.
 
